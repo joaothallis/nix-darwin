@@ -45,6 +45,7 @@
             pkgs.nodejs_22
             # to format json
             pkgs.jq
+            pkgs.asdf-vm
             pkgs.elixir
             pkgs.neovim
             pkgs.tig
@@ -75,7 +76,7 @@
 
           homebrew = {
             enable = true;
-            brews = [ ];
+            brews = [ "openssl@3.3" ];
             casks = [
               "1password"
               "slack"

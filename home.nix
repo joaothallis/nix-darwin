@@ -29,6 +29,7 @@
 
   programs.fish = {
     enable = true;
+    interactiveShellInit = ". ${pkgs.asdf-vm}/share/asdf-vm/asdf.fish";
     shellAliases = {
       gs = "git status";
       gd = "git diff";
