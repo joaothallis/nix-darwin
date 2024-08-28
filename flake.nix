@@ -75,6 +75,7 @@
             ];
             masApps = {
               "1Password for Safari" = 1569813296;
+              "WhatsApp Messenger" = 310633997;
 
             };
           };
