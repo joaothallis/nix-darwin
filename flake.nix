@@ -50,6 +50,7 @@
             pkgs.ripgrep
             pkgs.colima
             pkgs.docker
+            pkgs._1password
             pkgs.utm
             pkgs.nixfmt-rfc-style
           ];
@@ -68,12 +69,13 @@
           homebrew = {
             enable = true;
             brews = [ ];
-            casks =
-              [
-              ];
-            masApps =
-              {
-              };
+            casks = [
+              "1password"
+            ];
+            masApps = {
+              "1Password for Safari" = 1569813296;
+
+            };
           };
 
           # Necessary for using flakes on this system.
