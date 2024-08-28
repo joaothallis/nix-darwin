@@ -5,6 +5,19 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
+    homebrew-bundle = {
+      url = "github:homebrew/homebrew-bundle";
+      flake = false;
+    };
   };
 
   outputs =
@@ -12,6 +25,11 @@
       self,
       nix-darwin,
       nixpkgs,
+      nix-homebrew,
+      homebrew-core,
+      homebrew-cask,
+      homebrew-bundle,
+      ...
     }:
     let
       configuration =
@@ -44,6 +62,20 @@
           services.nix-daemon.enable = true;
           # nix.package = pkgs.nix;
 
+          homebrew.onActivation.autoUpdate = true;
+          homebrew.onActivation.upgrade = true;
+
+          homebrew = {
+            enable = true;
+            brews = [ ];
+            casks =
+              [
+              ];
+            masApps =
+              {
+              };
+          };
+
           # Necessary for using flakes on this system.
           nix.settings.experimental-features = "nix-command flakes";
 
@@ -68,7 +100,25 @@
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#Joaos-MacBook-Pro
       darwinConfigurations."Joaos-MacBook-Pro" = nix-darwin.lib.darwinSystem {
-        modules = [ configuration ];
+        modules = [
+          configuration
+          nix-homebrew.darwinModules.nix-homebrew
+          {
+            nix-homebrew = {
+              enable = true;
+
+              user = "joao";
+
+              taps = {
+                "homebrew/homebrew-core" = homebrew-core;
+                "homebrew/homebrew-cask" = homebrew-cask;
+                "homebrew/homebrew-bundle" = homebrew-bundle;
+              };
+
+              mutableTaps = false;
+            };
+          }
+        ];
       };
 
       # Expose the package set, including overlays, for convenience.
