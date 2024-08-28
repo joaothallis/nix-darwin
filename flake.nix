@@ -12,9 +12,22 @@
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
-      environment.systemPackages =
-        [ pkgs.vim
-        ];
+      environment.systemPackages = [
+            # required for github.com/github/copilot.vim
+            pkgs.nodejs_22
+            # to format json
+            pkgs.jq
+            pkgs.elixir
+            pkgs.neovim
+            pkgs.tig
+            pkgs.gh
+            pkgs.gh-copilot
+            pkgs.ripgrep
+            pkgs.colima
+            pkgs.docker
+            pkgs.utm
+            pkgs.nixfmt-rfc-style
+          ];
 
       # Auto upgrade nix package and the daemon service.
       services.nix-daemon.enable = true;
@@ -33,6 +46,8 @@
       # Used for backwards compatibility, please read the changelog before changing.
       # $ darwin-rebuild changelog
       system.stateVersion = 4;
+
+      nixpkgs.config.allowUnfree = true;
 
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
