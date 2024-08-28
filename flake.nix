@@ -51,6 +51,9 @@
             pkgs.tig
             pkgs.gh
             pkgs.gh-copilot
+            pkgs.gnupg
+            pkgs.pinentry_mac
+            pkgs.yubikey-manager
             pkgs.ripgrep
             pkgs.colima
             pkgs.docker

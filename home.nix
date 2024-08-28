@@ -11,9 +11,11 @@
     enable = true;
     userName = "João Thallis";
     userEmail = "joaothallis@icloud.com";
+    signing.key = "DC135DE53C8BF8726229A2FADC9B097428897B78";
     extraConfig = {
       commit = {
         verbose = true;
+        gpgSign = true;
       };
     };
   };
