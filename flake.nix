@@ -50,6 +50,7 @@
             pkgs.ripgrep
             pkgs.colima
             pkgs.docker
+            pkgs.google-chrome
             pkgs._1password
             pkgs.utm
             pkgs.nixfmt-rfc-style
