@@ -105,6 +105,8 @@
           programs.tmux.enable = true;
           programs.tmux.enableVim = true;
 
+          services.tailscale.enable = true;
+
           # Set Git commit hash for darwin-version.
           system.configurationRevision = self.rev or self.dirtyRev or null;
 
