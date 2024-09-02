@@ -91,7 +91,7 @@
               "1Password for Safari" = 1569813296;
               "AdGuard for Safari" = 1440147259;
               "WhatsApp Messenger" = 310633997;
-
+              "Yubico Authenticator" = 1497506650;
             };
           };
 
