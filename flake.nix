@@ -51,6 +51,7 @@
             pkgs.tig
             pkgs.gh
             pkgs.gh-copilot
+            pkgs.google-cloud-sdk
             pkgs.gnupg
             pkgs.pinentry_mac
             pkgs.yubikey-manager
