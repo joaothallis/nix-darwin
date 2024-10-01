@@ -57,7 +57,7 @@
       nd = "nix --experimental-features 'nix-command flakes' run nix-darwin -- switch --flake ~/.config/nix-darwin";
       mf = "mix format";
       mc = "mix credo --strict";
-      md = "mix dialyzer";
+      md = "MIX_ENV=test mix dialyzer";
       m = "mix test";
       mt = "mix test --cover";
       mtf = "mix test --failed";
