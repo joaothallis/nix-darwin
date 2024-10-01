@@ -110,6 +110,7 @@
 
           programs.tmux.enable = true;
           programs.tmux.enableVim = true;
+          programs.tmux.enableSensible = true;
 
           services.tailscale.enable = true;
 
