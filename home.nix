@@ -46,6 +46,8 @@
       glog = "git log --oneline";
       gc = "git commit --patch";
       gca = "git commit --patch --amend";
+      gr = "git reset --hard";
+      gcd = "git checkout develop";
       gpr = "gh pr create --assignee @me";
       r = "request_review";
       dps = "docker compose ps";
