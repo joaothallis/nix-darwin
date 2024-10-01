@@ -86,6 +86,11 @@
               "slack"
               "microsoft-edge@beta"
               "vial"
+              "obs"
+              "cursor"
+              "discord"
+              "google-chrome@dev"
+              "alacritty"
             ];
             masApps = {
               "1Password for Safari" = 1569813296;
