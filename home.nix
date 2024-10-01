@@ -23,10 +23,16 @@
     defaultEditor = true;
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "vscode" ];
   programs.vscode = {
     enable = true;
-    extensions = with pkgs.vscode-extensions; [ ];
+    extensions = with pkgs.vscode-extensions; [
+      github.copilot
+      # not working with vscode 1.93.1
+      # github.copilot-chat
+    ];
   };
 
   programs.fish = {
