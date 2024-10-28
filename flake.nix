@@ -111,6 +111,7 @@
           programs.tmux.enable = true;
           programs.tmux.enableVim = true;
           programs.tmux.enableSensible = true;
+          programs.tmux.extraConfig = "set-option -a terminal-features 'xterm-256color:RGB'";
 
           services.tailscale.enable = true;
 
