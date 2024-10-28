@@ -56,7 +56,6 @@
             pkgs.pinentry_mac
             pkgs.yubikey-manager
             pkgs.ripgrep
-            pkgs.google-chrome
             pkgs._1password
             pkgs.utm
             pkgs.nixfmt-rfc-style
