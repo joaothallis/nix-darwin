@@ -90,6 +90,7 @@
               "discord"
               "google-chrome@dev"
               "alacritty"
+              "stremio"
             ];
             masApps = {
               "1Password for Safari" = 1569813296;
