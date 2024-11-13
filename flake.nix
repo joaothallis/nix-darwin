@@ -46,7 +46,6 @@
             # to format json
             pkgs.jq
             pkgs.asdf-vm
-            pkgs.elixir
             pkgs.neovim
             pkgs.tig
             pkgs.gh
