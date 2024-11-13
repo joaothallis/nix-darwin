@@ -70,6 +70,8 @@
           # required for home-manager
           users.users."joao".home = "/Users/joao";
 
+          environment.systemPath = [ "/opt/homebrew/bin" ];
+
           homebrew.onActivation.autoUpdate = true;
           homebrew.onActivation.upgrade = true;
 
@@ -87,8 +89,11 @@
               "cursor"
               "discord"
               "google-chrome@dev"
+              "eloston-chromium"
               "alacritty"
               "stremio"
+              "utm@beta"
+              "chromedriver@beta"
             ];
             masApps = {
               "1Password for Safari" = 1569813296;
