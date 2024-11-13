@@ -65,6 +65,7 @@
       ts = "tmux list-sessions";
       ta = "tmux attach";
       c = "tmux choose-session";
+      uuid = "uuidgen | pbcopy";
     };
     shellAbbrs = {
       g = "git";
