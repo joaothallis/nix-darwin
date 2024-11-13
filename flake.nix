@@ -56,7 +56,7 @@
             pkgs.pinentry_mac
             pkgs.yubikey-manager
             pkgs.ripgrep
-            pkgs._1password
+            pkgs._1password-cli
             pkgs.utm
             pkgs.nixfmt-rfc-style
           ];
@@ -64,8 +64,6 @@
           environment.variables = {
             EDITOR = "nvim";
           };
-
-          environment.loginShell = "fish";
 
           # Auto upgrade nix package and the daemon service.
           services.nix-daemon.enable = true;
@@ -79,7 +77,9 @@
 
           homebrew = {
             enable = true;
-            brews = [ "openssl@3.3" ];
+            brews = [
+              "openssl@3"
+            ];
             casks = [
               "1password"
               "slack"
@@ -111,7 +111,11 @@
           programs.tmux.enable = true;
           programs.tmux.enableVim = true;
           programs.tmux.enableSensible = true;
-          programs.tmux.extraConfig = "set-option -a terminal-features 'xterm-256color:RGB'";
+          programs.tmux.extraConfig = ''
+              set-option -a terminal-features 'xterm-256color:RGB'
+
+              set -g default-command fish
+          '';
 
           services.tailscale.enable = true;
 
