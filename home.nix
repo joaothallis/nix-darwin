@@ -68,7 +68,6 @@
       ta = "tmux attach";
       c = "tmux choose-session";
       uuid = "uuidgen | pbcopy";
-      f = "aerospace macos-native-fullscreen";
     };
     shellAbbrs = {
       g = "git";
