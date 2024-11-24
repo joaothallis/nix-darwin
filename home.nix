@@ -7,20 +7,22 @@
 
 {
   home.stateVersion = "24.11";
-  programs.git = {
-    enable = true;
-    userName = "João Thallis";
-    userEmail = "joaothallis@icloud.com";
-    signing.key = "DC135DE53C8BF8726229A2FADC9B097428897B78";
-    extraConfig = {
-      commit = {
-        verbose = true;
-        gpgSign = true;
+  programs = {
+    git = {
+      enable = true;
+      userName = "João Thallis";
+      userEmail = "joaothallis@icloud.com";
+      signing.key = "DC135DE53C8BF8726229A2FADC9B097428897B78";
+      extraConfig = {
+        commit = {
+          verbose = true;
+          gpgSign = true;
+        };
       };
     };
-  };
-  programs.neovim = {
-    defaultEditor = true;
+    neovim = {
+      defaultEditor = true;
+    };
   };
 
   nixpkgs.config.allowUnfree = true;
