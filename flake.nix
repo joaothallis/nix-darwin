@@ -79,6 +79,7 @@
             enable = true;
             brews = [
               "openssl@3"
+              "gossip"
             ];
             casks = [
               "1password"
