@@ -87,6 +87,9 @@
             tmux new -t $session
         end
       '';
+      open_coverage_report = ''
+        open cover/Elixir.$argv.html
+      '';
     };
   };
 
