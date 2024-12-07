@@ -34,6 +34,7 @@
       github.copilot
       # not working with vscode 1.93.1
       # github.copilot-chat
+      asvetliakov.vscode-neovim
     ];
   };
 
