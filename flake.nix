@@ -88,6 +88,7 @@
               "microsoft-edge@beta"
               "vial"
               "obs"
+              "zoom"
               "cursor"
               "discord"
               "google-chrome@dev"
