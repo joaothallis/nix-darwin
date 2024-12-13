@@ -63,6 +63,7 @@
 
             variables = {
               EDITOR = "nvim";
+              KERL_CONFIGURE_OPTIONS = "--disable-jit";
             };
           };
 
