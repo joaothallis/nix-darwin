@@ -40,7 +40,10 @@
 
   programs.fish = {
     enable = true;
-    interactiveShellInit = ". ${pkgs.asdf-vm}/share/asdf-vm/asdf.fish";
+    interactiveShellInit = ''
+      . ${pkgs.asdf-vm}/share/asdf-vm/asdf.fish
+      ulimit -n 524288
+    '';
     shellAliases = {
       gs = "git status";
       gd = "git diff";
