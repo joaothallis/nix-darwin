@@ -75,6 +75,7 @@
       ta = "tmux attach";
       c = "tmux choose-session";
       uuid = "uuidgen | pbcopy";
+      uuid_string = "uuidgen | sed 's/^/\"/' | sed 's/$/\"/' | pbcopy";
     };
     shellAbbrs = {
       g = "git";
