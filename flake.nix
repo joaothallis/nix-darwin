@@ -89,6 +89,7 @@
               "microsoft-edge@beta"
               "vial"
               "obs"
+              "steam"
               "zoom"
               "cursor"
               "discord"
