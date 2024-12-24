@@ -93,7 +93,6 @@
               "zoom"
               "cursor"
               "discord"
-              "google-chrome@dev"
               "eloston-chromium"
               "alacritty"
               "stremio"
