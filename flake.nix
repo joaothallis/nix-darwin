@@ -97,7 +97,7 @@
               "alacritty"
               "stremio"
               "utm@beta"
-              "chromedriver@beta"
+              "chromedriver"
               "rio"
               "bisq"
             ];
