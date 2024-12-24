@@ -86,7 +86,7 @@
             casks = [
               "1password"
               "slack"
-              "microsoft-edge@beta"
+              "microsoft-edge"
               "vial"
               "obs"
               "steam"
