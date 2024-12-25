@@ -56,6 +56,7 @@
       gcd = "git checkout develop";
       gch = "git checkout";
       gc- = "git checkout -";
+      gb = "git checkout -b";
       gcai = "git --no-pager diff HEAD | mods --model gemini-1.5-flash-latest 'write a commit message for this patch. also write the long commit message. use semantic commits. break the lines at 80 chars.' >.git/gcai; git commit -a -F .git/gcai -e";
       gpr = "gh pr create --assignee @me";
       r = "request_review";
