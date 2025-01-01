@@ -19,6 +19,7 @@
           gpgSign = true;
         };
       };
+      ignores = [ ".lexical" ];
     };
     neovim = {
       defaultEditor = true;
