@@ -44,6 +44,9 @@
     interactiveShellInit = ''
       . ${pkgs.asdf-vm}/share/asdf-vm/asdf.fish
       ulimit -n 524288
+
+      set -gx CHROME_BINARY /run/current-system/sw/bin/google-chrome-stable
+      set -gx CHROMEDRIVER_BINARY /run/current-system/sw/bin/chromedriver
     '';
     shellAliases = {
       gs = "git status";

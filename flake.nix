@@ -42,6 +42,8 @@
           # $ nix-env -qaP | grep wget
           environment = {
             systemPackages = [
+              pkgs.google-chrome
+              pkgs.chromedriver
               # required for github.com/github/copilot.vim
               pkgs.nodejs_22
               # to format json
@@ -96,7 +98,6 @@
               "alacritty"
               "stremio"
               "utm@beta"
-              "chromedriver"
               "rio"
               "bisq"
             ];
