@@ -6,11 +6,11 @@ jobs:
   checks:
     runs-on: macos-latest
     steps:
+    - name: Set hostname
+      run: sudo scutil --set HostName Joaos-MacBook-Pro
     - uses: actions/checkout@v4
     - uses: cachix/install-nix-action@v30
       with:
         github_access_token: ${{ secrets.GITHUB_TOKEN }}
     - run: nix run nixpkgs#statix check
-    - name: Set hostname
-      run: sudo scutil --set HostName Joaos-MacBook-Pro
     - run: nix run nix-darwin -- build --flake ./
