@@ -94,6 +94,7 @@
               "steam"
               "zoom"
               "cursor"
+              "claude"
               "discord"
               "eloston-chromium"
               "alacritty"
