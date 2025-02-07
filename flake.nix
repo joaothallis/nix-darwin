@@ -59,6 +59,7 @@
               pkgs.yubikey-manager
               pkgs.ripgrep
               pkgs._1password-cli
+              pkgs.postman
               pkgs.nixfmt-rfc-style
             ];
 
