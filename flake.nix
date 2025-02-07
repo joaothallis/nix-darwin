@@ -109,6 +109,7 @@
               "WhatsApp Messenger" = 310633997;
               "Telegram" = 747648890;
               "Yubico Authenticator" = 1497506650;
+              "Perplexity: Ask Anything" = 6714467650;
             };
           };
 
