@@ -11,4 +11,6 @@ jobs:
       with:
         github_access_token: ${{ secrets.GITHUB_TOKEN }}
     - run: nix run nixpkgs#statix check
+    - name: Set hostname
+      run: sudo scutil --set HostName Joaos-MacBook-Pro
     - run: nix run nix-darwin -- build --flake ./
