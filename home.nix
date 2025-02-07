@@ -102,7 +102,7 @@
       open_coverage_report = ''
         open cover/Elixir.$argv.html
       '';
-      run_mix_test = ''
+      test_modified_files = ''
         # Get the list of file paths from `git status`
         set file_paths (git status --porcelain=v1 --untracked-files=all | awk '{print $2}' | grep .ex)
 
