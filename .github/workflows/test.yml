@@ -6,8 +6,16 @@ jobs:
   checks:
     runs-on: macos-latest
     steps:
-    - name: Set hostname
-      run: sudo scutil --set HostName Joaos-MacBook-Pro
+    - name: Set all hostname variants
+      run: |
+        sudo scutil --set HostName "Joaos-MacBook-Pro"
+        sudo scutil --set LocalHostName "Joaos-MacBook-Pro"
+        sudo scutil --set ComputerName "Joaos-MacBook-Pro"
+        # Verify the settings
+        echo "HostName: $(scutil --get HostName)"
+        echo "LocalHostName: $(scutil --get LocalHostName)"
+        echo "ComputerName: $(scutil --get ComputerName)"
+        echo "hostname command: $(hostname)"
     - uses: actions/checkout@v4
     - uses: cachix/install-nix-action@v30
       with:
