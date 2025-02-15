@@ -61,7 +61,7 @@
       gch = "git checkout";
       gc- = "git checkout -";
       gb = "git checkout -b";
-      gcai = "git --no-pager diff HEAD | mods 'write a commit message for this patch. also write the long commit message. use semantic commits. break the lines at 80 chars' | tr -s ' ' >.git/gcai; git commit -a -F .git/gcai -e";
+      gcai = "git --no-pager diff HEAD | mods \"write a commit message for this patch. also write the long commit message. use semantic commits. break the lines at 80 chars. The current branch is $(git rev-parse --abbrev-ref HEAD).\" | tr -s ' ' >.git/gcai; git commit -a -F .git/gcai -e";
       gpr = "gh pr create --assignee @me";
       r = "request_review";
       dps = "docker compose ps";
