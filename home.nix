@@ -268,6 +268,9 @@
       k = "kubectl";
     };
     functions = {
+      ai_branch_name = ''
+        	git --no-pager diff HEAD | mods 'Generate a concise branch name based on this diff. Optionally include a prefix like "feat/", "fix/", "chore/", or similar if it fits the changes; otherwise, use no prefix. Make it a short, meaningful description. The current branch is (git rev-parse --abbrev-ref HEAD). Keep it under 30 characters total. Return only one name.' | grep -v 'Conversation saved' | tr -s ' ' | head -n 1
+      '';
       tmux_new = ''
         set session (basename (pwd))
         if test -n "$TMUX"
