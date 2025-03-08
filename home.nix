@@ -19,10 +19,189 @@
           gpgSign = true;
         };
       };
-      ignores = [ ".lexical" ];
+      ignores = [
+        ".lexical"
+        ".projections.json"
+      ];
     };
     neovim = {
+      enable = true;
       defaultEditor = true;
+      extraLuaConfig = ''
+          vim.opt.number = true
+
+           local o = vim.o
+        local g = vim.g
+
+        o.clipboard = "unnamedplus"
+
+        o.number = true
+
+        vim.opt.numberwidth = 1
+
+        o.swapfile = false
+
+            g.markdown_fenced_languages = {
+            "python", "elixir", "bash", "dockerfile", 'sh=bash'
+        }
+      '';
+      plugins = with pkgs.vimPlugins; [
+        {
+          plugin = nvim-treesitter.withAllGrammars;
+          type = "lua";
+          config = ''
+            	        require'nvim-treesitter.configs'.setup {
+                    highlight = {enable = true}
+                }
+            	      '';
+        }
+        vim-elixir
+        {
+          plugin = nvim-lspconfig;
+          type = "lua";
+          config = ''
+            require'lspconfig'.elixirls.setup {
+                cmd = { 'elixir-ls' }
+            }
+
+                        -- Basic LSP keybindings
+                        vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
+                        vim.keymap.set('n', 'K', vim.lsp.buf.hover)
+                        vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
+          '';
+        }
+        {
+          plugin = telescope-nvim;
+          type = "lua";
+          config = ''
+             local telescope = require("telescope")
+                telescope.setup({
+                    defaults = {
+                        vimgrep_arguments = {
+                            "rg", "--color=never", "--no-heading", "--with-filename",
+                            "--line-number", "--column", "--smart-case", "--hidden",
+                            "--glob=!.git"
+                        }
+                    }
+                })
+                local builtin = require("telescope.builtin")
+                vim.keymap.set("n", "<leader>ff", builtin.git_files, {})
+                vim.keymap.set('n', '<leader>fg', builtin.live_grep,
+                               {desc = 'Telescope live grep'})
+            	  '';
+        }
+        vim-projectionist
+        vim-fugitive
+        {
+          plugin = gitlinker-nvim;
+          type = "lua";
+          config = "require'gitlinker'.setup()";
+        }
+        {
+          plugin = gitsigns-nvim;
+          type = "lua";
+          config = ''
+            	  require('gitsigns').setup{
+            	    on_attach = function(bufnr)
+                local gitsigns = require('gitsigns')
+
+                local function map(mode, l, r, opts)
+                  opts = opts or {}
+                  opts.buffer = bufnr
+                  vim.keymap.set(mode, l, r, opts)
+                end
+
+                -- Navigation
+                map('n', ']c', function()
+                  if vim.wo.diff then
+                    vim.cmd.normal({']c', bang = true})
+                  else
+                    gitsigns.nav_hunk('next')
+                  end
+                end)
+
+                map('n', '[c', function()
+                  if vim.wo.diff then
+                    vim.cmd.normal({'[c', bang = true})
+                  else
+                    gitsigns.nav_hunk('prev')
+                  end
+                end)
+
+                -- Actions
+                map('n', '<leader>hs', gitsigns.stage_hunk)
+                map('n', '<leader>hr', gitsigns.reset_hunk)
+
+                map('v', '<leader>hs', function()
+                  gitsigns.stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
+                end)
+
+                map('v', '<leader>hr', function()
+                  gitsigns.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
+                end)
+
+                map('n', '<leader>hS', gitsigns.stage_buffer)
+                map('n', '<leader>hR', gitsigns.reset_buffer)
+                map('n', '<leader>hp', gitsigns.preview_hunk)
+                map('n', '<leader>hi', gitsigns.preview_hunk_inline)
+
+                map('n', '<leader>hb', function()
+                  gitsigns.blame_line({ full = true })
+                end)
+
+                map('n', '<leader>hd', gitsigns.diffthis)
+
+                map('n', '<leader>hD', function()
+                  gitsigns.diffthis('~')
+                end)
+
+                map('n', '<leader>hQ', function() gitsigns.setqflist('all') end)
+                map('n', '<leader>hq', gitsigns.setqflist)
+
+                -- Toggles
+                map('n', '<leader>tb', gitsigns.toggle_current_line_blame)
+                map('n', '<leader>td', gitsigns.toggle_deleted)
+                map('n', '<leader>tw', gitsigns.toggle_word_diff)
+
+                -- Text object
+                map({'o', 'x'}, 'ih', gitsigns.select_hunk)
+              end
+            	  }
+            	  '';
+        }
+
+        file-line
+        vim-projectionist
+
+        {
+          plugin = neotest;
+          type = "lua";
+          config = ''
+            	  require("neotest").setup({
+              adapters = {
+                require("neotest-elixir")({}),
+              },
+            })
+                                                 vim.keymap.set("n", "<leader>t", function() require("neotest").run.run() end)
+                                    vim.keymap.set("n", "<leader>T", function() require("neotest").run.run(vim.fn.expand('%')) end)
+                                                	  '';
+        }
+        neotest-elixir
+        {
+          plugin = conform-nvim;
+          type = "lua";
+          config = ''
+            	  require("conform").setup({
+              format_on_save = {
+                -- These options will be passed to conform.format()
+                timeout_ms = 500,
+                lsp_format = "fallback",
+              },
+            })
+                                                	  '';
+        }
+
+      ];
     };
   };
 
