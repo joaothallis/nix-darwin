@@ -46,6 +46,7 @@
               pkgs.chromedriver
               # required for github.com/github/copilot.vim
               pkgs.nodejs_22
+              pkgs.elixir_1_18
               # to format json
               pkgs.jq
               pkgs.asdf-vm
