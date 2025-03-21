@@ -227,8 +227,7 @@
     enable = true;
     profiles.default.extensions = with pkgs.vscode-extensions; [
       github.copilot
-      # not working with vscode 1.93.1
-      # github.copilot-chat
+      github.copilot-chat
       asvetliakov.vscode-neovim
     ];
   };
