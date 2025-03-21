@@ -201,6 +201,21 @@
                                                 	  '';
         }
 
+        {
+          plugin = avante-nvim;
+          type = "lua";
+          config = ''
+            	      require('avante_lib').load()
+
+            	  require("avante").setup({
+            	   provider = "openai",
+            	   auto_suggestions_provider = "openai",
+                       behaviour = {auto_suggestions = false}
+            	  })
+            	  '';
+
+        }
+
       ];
     };
   };
