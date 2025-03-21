@@ -297,7 +297,8 @@
         end
       '';
       open_coverage_report = ''
-        open cover/Elixir.$argv.html
+        set module (echo $argv[1] | sed 's/Test$//')
+        open cover/Elixir.$module.html
       '';
       test_modified_files = ''
         # Get the list of file paths from `git status`
