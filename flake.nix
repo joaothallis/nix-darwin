@@ -141,6 +141,7 @@
 
           system = {
             defaults.trackpad.Clicking = true;
+            defaults.NSGlobalDomain.ApplePressAndHoldEnabled = false;
             # Set Git commit hash for darwin-version.
             configurationRevision = self.rev or self.dirtyRev or null;
             # Used for backwards compatibility, please read the changelog before changing.
