@@ -174,34 +174,6 @@
         vim-projectionist
 
         {
-          plugin = neotest;
-          type = "lua";
-          config = ''
-            	  require("neotest").setup({
-              adapters = {
-                require("neotest-elixir")({}),
-              },
-            })
-                                                 vim.keymap.set("n", "<leader>t", function() require("neotest").run.run() end)
-                                    vim.keymap.set("n", "<leader>T", function() require("neotest").run.run(vim.fn.expand('%')) end)
-                                                	  '';
-        }
-        neotest-elixir
-        {
-          plugin = conform-nvim;
-          type = "lua";
-          config = ''
-            	  require("conform").setup({
-              format_on_save = {
-                -- These options will be passed to conform.format()
-                timeout_ms = 500,
-                lsp_format = "fallback",
-              },
-            })
-                                                	  '';
-        }
-
-        {
           plugin = avante-nvim;
           type = "lua";
           config = ''
