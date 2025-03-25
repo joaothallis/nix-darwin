@@ -91,6 +91,7 @@
             	  '';
         }
         vim-projectionist
+        vim-test
         vim-fugitive
         {
           plugin = gitlinker-nvim;
