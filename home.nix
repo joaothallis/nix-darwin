@@ -60,8 +60,8 @@
           plugin = nvim-lspconfig;
           type = "lua";
           config = ''
-            require'lspconfig'.elixirls.setup {
-                cmd = { 'elixir-ls' }
+            require'lspconfig'.lexical.setup {
+                cmd = { 'lexical' }
             }
             require'lspconfig'.ts_ls.setup{}
 

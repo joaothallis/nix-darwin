@@ -48,7 +48,7 @@
               pkgs.nodejs_22
               pkgs.nodePackages.typescript-language-server
               pkgs.elixir_1_18
-              pkgs.elixir-ls
+              pkgs.lexical
               # to format json
               pkgs.jq
               pkgs.asdf-vm
