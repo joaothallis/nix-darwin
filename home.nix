@@ -63,6 +63,7 @@
             require'lspconfig'.elixirls.setup {
                 cmd = { 'elixir-ls' }
             }
+            require'lspconfig'.ts_ls.setup{}
 
                         -- Basic LSP keybindings
                         vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
