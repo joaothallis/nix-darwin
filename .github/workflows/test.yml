@@ -13,5 +13,6 @@ jobs:
     - uses: cachix/install-nix-action@v30
       with:
         github_access_token: ${{ secrets.GITHUB_TOKEN }}
+    - run: nix run github:astro/deadnix -- --fail
     - run: nix run nixpkgs#statix check
     - run: nix run nix-darwin -- build --flake ./
