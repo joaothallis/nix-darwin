@@ -46,6 +46,7 @@
       '';
       plugins = with pkgs.vimPlugins; [
         cmp-nvim-lsp
+        cmp-nvim-lsp-signature-help
         cmp-buffer
         cmp-path
         cmp-cmdline
