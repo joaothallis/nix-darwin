@@ -57,12 +57,30 @@
         }
         vim-elixir
         {
+          plugin = elixir-tools-nvim;
+          type = "lua";
+          config = ''
+	    elixirls = require("elixir.elixirls")
+
+            require("elixir").setup({
+              nextls = {enable = true},
+              elixirls = {enable = true,
+		 settings = elixirls.settings {
+		      autoBuild = true,
+		      dialyzerEnabled = true,
+		      incrementalDialyzer = true,
+		      fetchDeps = true,
+		      enableTestLenses = false
+		    }
+	      },
+              projectionist = {enable = false},
+            })
+          '';
+        }
+        {
           plugin = nvim-lspconfig;
           type = "lua";
           config = ''
-            require'lspconfig'.lexical.setup {
-                cmd = { 'lexical' }
-            }
             require'lspconfig'.ts_ls.setup{}
 
             -- Basic LSP keybindings
