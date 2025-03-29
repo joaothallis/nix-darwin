@@ -119,6 +119,8 @@
         cmp-vsnip
         vim-vsnip
 
+        copilot-vim
+
         {
           plugin = nvim-treesitter.withAllGrammars;
           type = "lua";
