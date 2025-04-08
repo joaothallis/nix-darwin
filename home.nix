@@ -189,7 +189,24 @@
             	  '';
         }
         vim-projectionist
-        vim-test
+        vimux
+        {
+          plugin = vim-test;
+          config = ''
+            	  let g:test#echo_command = 0
+
+            if exists('$TMUX')
+              let g:test#preserve_screen = 1
+              let g:test#strategy = 'vimux'
+            endif
+
+            nmap <silent> <leader>t :TestNearest<CR>
+            nmap <silent> <leader>T :TestFile<CR>
+            nmap <silent> <leader>a :TestSuite<CR>
+            nmap <silent> <leader>l :TestLast<CR>
+            nmap <silent> <leader>g :TestVisit<CR>
+            	  '';
+        }
         vim-fugitive
         {
           plugin = gitlinker-nvim;
