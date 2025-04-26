@@ -97,7 +97,6 @@
               "cursor"
               "claude"
               "discord"
-              "eloston-chromium"
               "alacritty"
               "stremio"
               "transmission"
@@ -107,8 +106,6 @@
               "libreoffice"
             ];
             masApps = {
-              "1Password for Safari" = 1569813296;
-              "AdGuard for Safari" = 1440147259;
               "WhatsApp Messenger" = 310633997;
               "Telegram" = 747648890;
               "Yubico Authenticator" = 1497506650;
