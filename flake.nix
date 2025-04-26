@@ -100,6 +100,7 @@
               "eloston-chromium"
               "alacritty"
               "stremio"
+              "transmission"
               "utm@beta"
               "rio"
               "bisq"
