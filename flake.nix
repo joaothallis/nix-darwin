@@ -97,6 +97,7 @@
               "cursor"
               "claude"
               "discord"
+              "eloston-chromium"
               "alacritty"
               "stremio"
               "transmission"
