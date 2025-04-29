@@ -45,6 +45,18 @@
         }
       '';
       plugins = with pkgs.vimPlugins; [
+        {
+          plugin = catppuccin-nvim;
+          type = "lua";
+          config = ''
+            	  require('catppuccin').setup {
+            	    background = { 
+            	      dark = "frappe"
+                      }}
+            	  vim.cmd.colorscheme 'catppuccin'
+            	  '';
+        }
+
         cmp-nvim-lsp
         cmp-nvim-lsp-signature-help
         cmp-buffer
