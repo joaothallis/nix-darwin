@@ -61,6 +61,7 @@
               pkgs.ripgrep
               pkgs._1password-cli
 	      pkgs.postgresql
+	      pkgs.pgcli
               pkgs.postman
               pkgs.nixfmt-rfc-style
             ];
