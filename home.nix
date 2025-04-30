@@ -19,7 +19,6 @@
         };
       };
       ignores = [
-        ".lexical"
         ".projections.json"
       ];
     };
