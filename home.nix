@@ -22,6 +22,10 @@
         ".projections.json"
       ];
     };
+    gh = {
+      enable = true;
+      extensions = [ pkgs.gh-copilot ];
+    };
     neovim = {
       enable = true;
       defaultEditor = true;
