@@ -328,6 +328,7 @@
   programs.vscode = {
     enable = true;
     profiles.default.extensions = with pkgs.vscode-extensions; [
+      elixir-lsp.vscode-elixir-ls
       github.copilot
       asvetliakov.vscode-neovim
     ];
