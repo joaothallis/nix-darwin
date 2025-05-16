@@ -145,6 +145,8 @@
                 }
             	      '';
         }
+
+        vim-elixir
         {
           plugin = elixir-tools-nvim;
           type = "lua";
