@@ -15,7 +15,7 @@
       extraConfig = {
         commit = {
           verbose = true;
-          gpgSign = true;
+          gpgSign = false;
         };
       };
       ignores = [
