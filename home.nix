@@ -365,7 +365,7 @@
       u = "docker compose -f docker-compose-arm.yml up -d";
       d = "docker compose down";
       n = "nix-shell --command fish";
-      nd = "nix --experimental-features 'nix-command flakes' run nix-darwin -- switch --flake ~/.config/nix-darwin";
+      nd = "sudo nix run nix-darwin -- switch --flake ~/.config/nix-darwin";
       mf = "mix format";
       mc = "mix credo --strict";
       md = "MIX_ENV=test mix dialyzer";
